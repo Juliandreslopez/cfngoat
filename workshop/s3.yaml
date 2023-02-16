@@ -20,3 +20,5 @@ Resources:
                 - !Split
                   - "/"
                   - !Ref "AWS::StackId" 
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
