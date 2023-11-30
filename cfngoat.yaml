@@ -370,6 +370,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: True
 
   #############
   ###  IAM  ###
@@ -1060,6 +1062,8 @@ Resources:
           Value: "2021-08-23 13:51:41"
         - Key: git_last_modified_by
           Value: nimrodkor@gmail.com
+      PublicAccessBlockConfiguration:
+        RestrictPublicBuckets: True
 
    ########################
    ### Clean S3 Buckets ###
