@@ -22,3 +22,22 @@ Resources:
                 - !Split
                   - "/"
                   - !Ref "AWS::StackId" 
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+            BucketKeyEnabled: False
+      VersioningConfiguration:
+        Status: Enabled
+      InventoryConfigurations:
+        - Destination:
+            BucketAccountId: 188619942792
+          Prefix: inventory-report/daily
+          Format: Parquet
+          BucketArn: arn:aws:s3:::pcdsprodus-s3-inventory-us-west-2
+          Enabled: True
+          Id: pcdsprodus-pcds-sizing-estimate
+          IncludedObjectVersions: Current
+          ScheduleFrequency: Daily
+
+
