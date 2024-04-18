@@ -22,3 +22,22 @@ Resources:
                 - !Split
                   - "/"
                   - !Ref "AWS::StackId" 
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+            BucketKeyEnabled: False
+      VersioningConfiguration:
+        Status: Enabled
+      InventoryConfigurations:
+        - Destination:
+            BucketAccountId: 188619942792
+          Prefix: dlp-prod-us/inventory-report/daily
+          Format: Parquet
+          BucketArn: arn:aws:s3:::pcds-prod-us-west-2
+          Enabled: True
+          Id: dlp-prod-us-pcds-sizing-estimate
+          IncludedObjectVersions: Current
+          ScheduleFrequency: Daily
+
+
