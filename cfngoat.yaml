@@ -879,7 +879,6 @@ Resources:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-analysis"
-      Runtime: nodejs12.x
       Role: !GetAtt IAM4Lambda.Arn
       Handler: exports.test
       Code:
@@ -910,7 +909,6 @@ Resources:
           Value: jonathan.jozwiak/nimrodkor
         - Key: git_last_modified_at
           Value: "2021-08-23 13:51:41"
-
   ############
   ###  S3  ###
   ############
